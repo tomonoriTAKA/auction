@@ -19,10 +19,9 @@
 </p>
 
 <p>
-  <img src= "<%= @item.image_url %>">
+  <%= image_tag @item.image_url %>
 </p>
-
-<a href="/items/<%= @item.id %>/edit">編集</a>
-<a href="/items/<%= @item.id %>" data-confirm="本当に削除しますか?" data-method="delete">削除</a>
+<%= link_to "編集", edit_item_path(@item) %>
+<%= link_to "削除", item_path(@item), method: :delete %>
 
 <a href="/items/">戻る</a>
